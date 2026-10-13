@@ -1,28 +1,4 @@
-"""
-Demo tải ảnh snapshot - chạy ĐỘC LẬP, không đụng vào code FireGuard.
 
-Chạy:
-    python demo.py                 # dùng webcam 0 (không có thì tự dùng khung hình giả)
-    python demo.py 1               # webcam số 1
-    python demo.py video.mp4       # dùng file video
-    python demo.py rtsp://...      # dùng camera IP
-
-Rồi mở http://localhost:8001
-
-LƯU TRỮ ẢNH:
-  - Có MinIO đang chạy + đã `pip install minio`  -> ảnh lưu vào MinIO (bucket "snapshots"),
-    tải bằng presigned URL.
-  - Không có MinIO                                -> tự lưu vào thư mục snapshots/ (dự phòng).
-
-Cấu hình MinIO bằng biến môi trường (có giá trị mặc định cho MinIO chạy local):
-    MINIO_ENDPOINT   (mặc định localhost:9000)
-    MINIO_ACCESS_KEY (mặc định minioadmin)
-    MINIO_SECRET_KEY (mặc định minioadmin)
-    MINIO_BUCKET     (mặc định snapshots)
-    MINIO_SECURE     (mặc định false, đặt true nếu dùng https)
-
-Cần: opencv-python, numpy (+ minio nếu dùng MinIO).
-"""
 import io
 import os
 import sys
